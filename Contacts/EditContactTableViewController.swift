@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
 class EditContactTableViewController: UITableViewController {
+    
+    var contact: NSManagedObject? = nil
+    
+    // MARK: - TextField outlets
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var mobileTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let contact = contact {
+            configureContactTextFields(with: contact)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,6 +37,14 @@ class EditContactTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Functions
+    func configureContactTextFields(with contact: NSManagedObject) {
+        self.firstNameTextField.text = contact.value(forKey: "firstName") as? String
+        self.lastNameTextField.text = contact.value(forKey: "lastName") as? String
+        mobileTextField.text = contact.value(forKey: "phoneNumber") as? String
+        emailTextField.text = contact.value(forKey: "email") as? String
     }
 
     // MARK: - Table view data source

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Contact {
+struct LocalContact {
     var id: Int
     var firstName: String
     var lastName: String

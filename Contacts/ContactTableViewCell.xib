@@ -54,6 +54,11 @@
                     <constraint firstAttribute="trailing" secondItem="wzs-aG-sHR" secondAttribute="trailing" constant="32" id="rsI-HS-11w"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="favoriteImageView" destination="zmc-vS-RBP" id="T9Y-sY-S3L"/>
+                <outlet property="fullNameLabel" destination="PuR-Lx-LRa" id="xiu-Cy-ScV"/>
+                <outlet property="profilePictureImageView" destination="k0i-H9-0Df" id="MPC-0J-xqf"/>
+            </connections>
             <point key="canvasLocation" x="34" y="64"/>
         </tableViewCell>
     </objects>

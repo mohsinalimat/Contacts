@@ -133,8 +133,8 @@
 				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
 				6E02DD351F556C8600C701D5 /* Main.storyboard */,
 				6E02DD751F56636200C701D5 /* EditContact.storyboard */,
-				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
 				6E02DD3D1F556C8600C701D5 /* LaunchScreen.storyboard */,
+				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
 				6E02DD401F556C8600C701D5 /* Info.plist */,
 				6E02DD381F556C8600C701D5 /* Contacts.xcdatamodeld */,
 			);

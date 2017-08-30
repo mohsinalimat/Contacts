@@ -9,7 +9,11 @@
 import UIKit
 
 class ContactTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var favoriteImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

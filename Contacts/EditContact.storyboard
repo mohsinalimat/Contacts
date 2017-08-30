@@ -142,6 +142,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="kwi-61-erU" id="6Fr-Hc-CNs"/>
+                        <outlet property="firstNameTextField" destination="WTj-fd-NIZ" id="qrP-oX-VOl"/>
+                        <outlet property="lastNameTextField" destination="OcQ-oT-5QT" id="JE2-ek-AoW"/>
+                        <outlet property="mobileTextField" destination="G4C-Rz-jbj" id="RNc-k1-wcz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANR-cU-Tsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="oVN-E8-BTI" userLabel="Exit" sceneMemberID="exit"/>
