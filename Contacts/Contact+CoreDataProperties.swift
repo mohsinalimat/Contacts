@@ -21,7 +21,7 @@ extension Contact {
     @NSManaged public var email: String?
     @NSManaged public var favorite: Bool
     @NSManaged public var firstName: String?
-    @NSManaged public var id: String?
+    @NSManaged public var id: Int32
     @NSManaged public var lastName: String?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var profilePictureImage: NSData?
