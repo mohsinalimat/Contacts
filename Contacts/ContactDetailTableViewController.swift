@@ -1,5 +1,5 @@
 //
-//  AddContactTableViewController.swift
+//  ContactDetailTableViewController.swift
 //  Contacts
 //
 //  Created by Zulwiyoza Putra on 8/29/17.
@@ -8,8 +8,16 @@
 
 import UIKit
 
-class AddContactTableViewController: UITableViewController {
+class ContactDetailTableViewController: UITableViewController {
 
+    
+    @IBAction func editContact(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "EditContact", bundle: nil)
+        let editContactViewController = storyboard.instantiateInitialViewController()
+        self.present(editContactViewController!, animated: true) {
+            // If necessary do something
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,8 +34,6 @@ class AddContactTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
