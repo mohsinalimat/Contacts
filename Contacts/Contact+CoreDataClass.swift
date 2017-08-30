@@ -47,15 +47,13 @@ public class Contact: NSManagedObject {
             if let detailURL = dictionary["url"] as? String {
                 self.detailURL = detailURL
             } else {
-                self.detailURL = nil
+                self.detailURL = "http://gojek-contacts-app.herokuapp.com/contacts/\(self.id).json"
             }
             
+            // FIXME: - Assign detail properties here
             
         } else {
             fatalError("Unable to find Entity name!")
         }
-
     }
-    
-
 }

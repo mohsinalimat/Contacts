@@ -14,13 +14,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-//    var coreDataStack: CoreDataStack {
-//        return CoreDataStack(completion: nil)
-//    }
-
+    lazy var coreDataStack = CoreDataStack()
+    
+    
+    // MARK: Preload Data
+    
+    func preloadData() {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
+        do {
+            let fetchResults = try coreDataStack.manageObjectContext.execute(fetchRequest)
+            print(fetchResults)
+            addSampleData()
+        } catch let error as NSError {
+            fatalError("Error fetching data: \(error)")
+        }
+    }
+    
+    func addSampleData() {
+        
+        // Create notebooks
+        let putraDictionary = ["id": 123, "first_name": "Zulwiyoza", "last_name": "Putra"] as [String : Any]
+        let anindaDictionary = ["id": 212, "first_name": "Aninda", "last_name": "Rahmadianti"] as [String : Any]
+        let raraDictionary = ["id": 212, "first_name": "Aulia", "last_name": "Putri"] as [String : Any]
+        
+        let putra = Contact(dictionary: putraDictionary, context: coreDataStack.manageObjectContext)
+        let rara = Contact(dictionary: raraDictionary, context: coreDataStack.manageObjectContext)
+        let aninda = Contact(dictionary: anindaDictionary, context: coreDataStack.manageObjectContext)
+        
+        print(putra.firstName! + " " + aninda.firstName! + " " + rara.firstName!)
+        
+        coreDataStack.saveMainContext()
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        preloadData()
         return true
     }
 
@@ -46,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         
-        // SaveContext here
+        coreDataStack.saveMainContext()
     }
 
     
