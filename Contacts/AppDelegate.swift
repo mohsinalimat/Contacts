@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var coreDataStack: CoreDataStack {
-        return CoreDataStack(completion: nil)
-    }
+//    var coreDataStack: CoreDataStack {
+//        return CoreDataStack(completion: nil)
+//    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
