@@ -26,6 +26,7 @@
 		6E02DD741F56592900C701D5 /* EditContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */; };
 		6E02DD761F56636200C701D5 /* EditContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E02DD751F56636200C701D5 /* EditContact.storyboard */; };
 		6E02DD781F5665EB00C701D5 /* ContactDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */; };
+		6E11263D1F56A1350067E0D3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactTableViewController.swift; sourceTree = "<group>"; };
 		6E02DD751F56636200C701D5 /* EditContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditContact.storyboard; sourceTree = "<group>"; };
 		6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailTableViewController.swift; sourceTree = "<group>"; };
+		6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
 				6E02DD331F556C8600C701D5 /* ViewController.swift */,
 				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
+				6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */,
 				6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */,
 				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
 				6E02DD6F1F563F1800C701D5 /* Contact.swift */,
@@ -314,6 +317,7 @@
 				6E02DD781F5665EB00C701D5 /* ContactDetailTableViewController.swift in Sources */,
 				6E02DD721F5644F700C701D5 /* String+DateFormatter.swift in Sources */,
 				6E02DD651F5576C700C701D5 /* ContactsAPI+Constants.swift in Sources */,
+				6E11263D1F56A1350067E0D3 /* CoreDataStack.swift in Sources */,
 				6E02DD631F556D2B00C701D5 /* ContactsAPI.swift in Sources */,
 				6E02DD671F557BAF00C701D5 /* ContactsAPI+URLBuilder.swift in Sources */,
 				6E02DD6C1F55818500C701D5 /* ContactTableViewCell.swift in Sources */,
@@ -570,6 +574,7 @@
 				6E02DD5B1F556C8600C701D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E02DD5C1F556C8600C701D5 /* Build configuration list for PBXNativeTarget "ContactsTests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +583,7 @@
 				6E02DD5E1F556C8600C701D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E02DD5F1F556C8600C701D5 /* Build configuration list for PBXNativeTarget "ContactsUITests" */ = {
 			isa = XCConfigurationList;
@@ -586,6 +592,7 @@
 				6E02DD611F556C8600C701D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

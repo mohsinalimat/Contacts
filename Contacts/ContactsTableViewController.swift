@@ -52,37 +52,12 @@ class ContactsTableViewController: UITableViewController {
     // Mark: - Cored data source
     
     func fetchContacts(completion: (_ objects: [NSManagedObject]?,_ error: NSError?) -> Void) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
-        
-        do {
-            let objects = try managedObjectContext.fetch(fetchRequest) as! [NSManagedObject]
-            completion(objects, nil)
-        } catch let error as NSError {
-            completion(nil, error)
-        }
+        guard (UIApplication.shared.delegate as? AppDelegate) != nil else { return }
+
     }
     
     func saveContact(with dictionary: [String: Any], completion: (_ object: NSManagedObject?,_ error: NSError?) -> Void) {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-        let managedObjectContext = appDelegate.persistentContainer.viewContext
-        guard let entity = NSEntityDescription.entity(forEntityName: "Contact", in: managedObjectContext) else { return }
-        let object = NSManagedObject(entity: entity, insertInto: managedObjectContext)
-        entity.setValue(dictionary["phoneNumber"], forKey: "phoneNumber")
-        entity.setValue(dictionary["firstName"], forKey: "firstName")
-        entity.setValue(dictionary["lastName"], forKey: "lastName")
-        entity.setValue(dictionary["email"], forKey: "email")
-        
-        do {
-            try managedObjectContext.save()
-            contacts.append(object)
-            completion(object, nil)
-        } catch let error as NSError {
-            completion(nil, error)
-        }
     }
     
     
@@ -188,6 +163,7 @@ class ContactsTableViewController: UITableViewController {
         print(segue.identifier!)
         if segue.identifier == "done"{
             let editViewController = segue.source as? EditContactTableViewController
+            print(editViewController.debugDescription)
             
             // FIXME: - Write date on core data
         }
