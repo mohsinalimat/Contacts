@@ -10,20 +10,18 @@ import Foundation
 
 class ContactsAPI: NSObject {
     
-    enum Request {
-        case GET, POST, PUT
-    }
+    var contacts: [Contact] = []
     
-    enum Method {
-        case Contacts, Contact
-    }
+    enum Request { case GET, POST, PUT }
+    
+    enum Method { case Contacts, Contact }
     
     // Shared session
     var session = URLSession.shared
     
     // Get contacts
     func Contacts(request: Request.Type) {
-        // TODO: Buil
+        
     }
     
     // MARK: Shared Instance

@@ -21,6 +21,9 @@
 		6E02DD691F5580FD00C701D5 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */; };
 		6E02DD6C1F55818500C701D5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */; };
 		6E02DD6D1F55818500C701D5 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */; };
+		6E02DD701F563F1800C701D5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD6F1F563F1800C701D5 /* Contact.swift */; };
+		6E02DD721F5644F700C701D5 /* String+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */; };
+		6E02DD741F56592900C701D5 /* AddContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD731F56592900C701D5 /* AddContactTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		6E02DD6F1F563F1800C701D5 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
+		6E02DD731F56592900C701D5 /* AddContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +120,11 @@
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
 				6E02DD331F556C8600C701D5 /* ViewController.swift */,
 				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
+				6E02DD731F56592900C701D5 /* AddContactTableViewController.swift */,
+				6E02DD6F1F563F1800C701D5 /* Contact.swift */,
 				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
 				6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */,
+				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
 				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
 				6E02DD351F556C8600C701D5 /* Main.storyboard */,
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
@@ -292,7 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E02DD701F563F1800C701D5 /* Contact.swift in Sources */,
 				6E02DD341F556C8600C701D5 /* ViewController.swift in Sources */,
+				6E02DD741F56592900C701D5 /* AddContactTableViewController.swift in Sources */,
+				6E02DD721F5644F700C701D5 /* String+DateFormatter.swift in Sources */,
 				6E02DD651F5576C700C701D5 /* ContactsAPI+Constants.swift in Sources */,
 				6E02DD631F556D2B00C701D5 /* ContactsAPI.swift in Sources */,
 				6E02DD671F557BAF00C701D5 /* ContactsAPI+URLBuilder.swift in Sources */,
