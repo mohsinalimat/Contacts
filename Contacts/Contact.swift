@@ -1,5 +1,5 @@
 //
-//  Contact+CoreDataClass.swift
+//  Contact.swift
 //  Contacts
 //
 //  Created by Zulwiyoza Putra on 8/30/17.
