@@ -22,6 +22,8 @@ class ContactTableViewCell: UITableViewCell {
     func configureUICell(contact: Contact) {
         if let image = contact.profilePictureImage {
             profilePictureImageView.image = UIImage(data: image as Data)
+        } else {
+            profilePictureImageView.image = #imageLiteral(resourceName: "user")
         }
         let firstName = contact.firstName ?? ""
         let lastName = contact.lastName ?? ""
