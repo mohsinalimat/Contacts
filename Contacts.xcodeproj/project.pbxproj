@@ -128,14 +128,14 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
-				6E1126421F56B0130067E0D3 /* Model */,
-				6EE97B091F580F43005A6924 /* View Controller */,
-				6EE97B081F580F33005A6924 /* Reusable View */,
-				6EE97B071F580F21005A6924 /* Helper Method */,
-				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
 				6E02DD3D1F556C8600C701D5 /* LaunchScreen.storyboard */,
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
 				6E02DD401F556C8600C701D5 /* Info.plist */,
+				6E1126421F56B0130067E0D3 /* Models */,
+				6EE97B091F580F43005A6924 /* ViewControllers */,
+				6EE97B081F580F33005A6924 /* ReusableViews */,
+				6EE97B071F580F21005A6924 /* HelperMethods */,
+				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 			name = ContactsAPI;
 			sourceTree = "<group>";
 		};
-		6E1126421F56B0130067E0D3 /* Model */ = {
+		6E1126421F56B0130067E0D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */,
@@ -158,7 +158,7 @@
 				6E3489C51F578EB600757157 /* Contact+CoreDataProperties.swift */,
 				6E34892A1F5780CF00757157 /* Contacts.xcdatamodeld */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6E8DDA791F57EEC500E1E7EB /* ContactsUITests */ = {
@@ -179,67 +179,67 @@
 			path = ContactsTests;
 			sourceTree = "<group>";
 		};
-		6EE97B041F580ED7005A6924 /* ContactDetailViewController */ = {
+		6EE97B041F580ED7005A6924 /* ContactDetail */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
 			);
-			name = ContactDetailViewController;
+			name = ContactDetail;
 			sourceTree = "<group>";
 		};
-		6EE97B051F580EEC005A6924 /* ContactsTableViewController */ = {
+		6EE97B051F580EEC005A6924 /* ContactsList */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
 				6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */,
 				6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */,
 			);
-			name = ContactsTableViewController;
+			name = ContactsList;
 			sourceTree = "<group>";
 		};
-		6EE97B061F580F02005A6924 /* ContactFormTableViewController */ = {
+		6EE97B061F580F02005A6924 /* Contact Form */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
 				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
 			);
-			name = ContactFormTableViewController;
+			name = "Contact Form";
 			sourceTree = "<group>";
 		};
-		6EE97B071F580F21005A6924 /* Helper Method */ = {
+		6EE97B071F580F21005A6924 /* HelperMethods */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
 			);
-			name = "Helper Method";
+			name = HelperMethods;
 			sourceTree = "<group>";
 		};
-		6EE97B081F580F33005A6924 /* Reusable View */ = {
+		6EE97B081F580F33005A6924 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */,
 				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
 			);
-			name = "Reusable View";
+			name = ReusableViews;
 			sourceTree = "<group>";
 		};
-		6EE97B091F580F43005A6924 /* View Controller */ = {
+		6EE97B091F580F43005A6924 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6EE97B0A1F580F62005A6924 /* MainViewController */,
-				6EE97B061F580F02005A6924 /* ContactFormTableViewController */,
+				6EE97B0A1F580F62005A6924 /* Main */,
+				6EE97B061F580F02005A6924 /* Contact Form */,
 			);
-			name = "View Controller";
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		6EE97B0A1F580F62005A6924 /* MainViewController */ = {
+		6EE97B0A1F580F62005A6924 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD351F556C8600C701D5 /* Main.storyboard */,
-				6EE97B041F580ED7005A6924 /* ContactDetailViewController */,
-				6EE97B051F580EEC005A6924 /* ContactsTableViewController */,
+				6EE97B041F580ED7005A6924 /* ContactDetail */,
+				6EE97B051F580EEC005A6924 /* ContactsList */,
 			);
-			name = MainViewController;
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
