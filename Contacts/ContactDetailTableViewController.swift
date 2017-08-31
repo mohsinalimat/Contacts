@@ -10,16 +10,32 @@ import UIKit
 
 class ContactDetailTableViewController: UITableViewController {
 
+    var contact: Contact!
+    
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     @IBAction func editContact(_ sender: Any) {
         let storyboard = UIStoryboard(name: "EditContact", bundle: nil)
-        let editContactViewController = storyboard.instantiateInitialViewController()
-        self.present(editContactViewController!, animated: true) {
+        let navigation = storyboard.instantiateInitialViewController() as! UINavigationController
+        let controller = navigation.topViewController as! EditContactTableViewController
+        controller.contact = contact
+        self.present(navigation, animated: true) {
             // If necessary do something
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fullNameLabel.text = "\(contact.firstName ?? "") \(contact.lastName ?? "")"
+        if let email = contact.email {
+            emailLabel.text = email
+        }
+        
+        if let phoneNumber = contact.phoneNumber {
+            phoneNumberLabel.text = phoneNumber
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
