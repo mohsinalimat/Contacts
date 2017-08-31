@@ -166,9 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */,
-				6E3489C41F578EB600757157 /* Contact+CoreDataClass.swift */,
-				6E3489C51F578EB600757157 /* Contact+CoreDataProperties.swift */,
-				6E34892A1F5780CF00757157 /* Contacts.xcdatamodeld */,
+				6EB428541F58D9F0005A1F44 /* Contact */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -191,6 +189,34 @@
 			path = ContactsTests;
 			sourceTree = "<group>";
 		};
+		6EB428521F58D9B0005A1F44 /* ContactFormExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */,
+				6EB428501F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift */,
+			);
+			name = ContactFormExtensions;
+			sourceTree = "<group>";
+		};
+		6EB428531F58D9CE005A1F44 /* ContactLitsExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */,
+				6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */,
+			);
+			name = ContactLitsExtensions;
+			sourceTree = "<group>";
+		};
+		6EB428541F58D9F0005A1F44 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				6E3489C41F578EB600757157 /* Contact+CoreDataClass.swift */,
+				6E3489C51F578EB600757157 /* Contact+CoreDataProperties.swift */,
+				6E34892A1F5780CF00757157 /* Contacts.xcdatamodeld */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		6EE97B041F580ED7005A6924 /* ContactDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,21 +229,19 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
-				6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */,
-				6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */,
+				6EB428531F58D9CE005A1F44 /* ContactLitsExtensions */,
 			);
 			name = ContactsList;
 			sourceTree = "<group>";
 		};
-		6EE97B061F580F02005A6924 /* Contact Form */ = {
+		6EE97B061F580F02005A6924 /* ContactForm */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
-				6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */,
-				6EB428501F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift */,
 				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
+				6EB428521F58D9B0005A1F44 /* ContactFormExtensions */,
 			);
-			name = "Contact Form";
+			name = ContactForm;
 			sourceTree = "<group>";
 		};
 		6EE97B071F580F21005A6924 /* HelperMethods */ = {
@@ -244,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE97B0A1F580F62005A6924 /* Main */,
-				6EE97B061F580F02005A6924 /* Contact Form */,
+				6EE97B061F580F02005A6924 /* ContactForm */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
