@@ -22,7 +22,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-gD-YCE">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-gD-YCE">
                                     <rect key="frame" x="124" y="65" width="127" height="127"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Yhm-gD-YCE" secondAttribute="height" multiplier="1:1" id="10i-tj-P4x"/>
@@ -187,6 +187,7 @@
                         <outlet property="firstNameTextField" destination="WTj-fd-NIZ" id="qrP-oX-VOl"/>
                         <outlet property="lastNameTextField" destination="OcQ-oT-5QT" id="JE2-ek-AoW"/>
                         <outlet property="mobileTextField" destination="G4C-Rz-jbj" id="RNc-k1-wcz"/>
+                        <outlet property="profilePictureImageView" destination="Yhm-gD-YCE" id="Lv3-3F-Zyi"/>
                         <segue destination="oVN-E8-BTI" kind="unwind" identifier="unwindToContactsTableViewController" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="Qcb-a1-18N"/>
                     </connections>
                 </tableViewController>
