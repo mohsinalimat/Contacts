@@ -22,15 +22,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-aG-sHR">
                         <rect key="frame" x="15" y="8" width="273" height="47.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-H9-0Df">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-H9-0Df">
                                 <rect key="frame" x="0.0" y="0.0" width="47.5" height="47.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="k0i-H9-0Df" secondAttribute="height" multiplier="1:1" id="ee8-aP-QNM"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zulwiyoza Putra" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuR-Lx-LRa">
-                                <rect key="frame" x="63.5" y="11.5" width="146" height="24.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <rect key="frame" x="63.5" y="0.0" width="146" height="47.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -42,8 +42,10 @@
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="PuR-Lx-LRa" secondAttribute="bottom" constant="12" id="OGF-mw-Pif"/>
-                            <constraint firstItem="PuR-Lx-LRa" firstAttribute="top" secondItem="wzs-aG-sHR" secondAttribute="top" constant="12" id="Xoy-uG-Ruh"/>
+                            <constraint firstAttribute="bottom" secondItem="PuR-Lx-LRa" secondAttribute="bottom" id="3Vk-oh-hd4"/>
+                            <constraint firstAttribute="bottom" secondItem="k0i-H9-0Df" secondAttribute="bottom" id="a9T-z1-xTy"/>
+                            <constraint firstItem="k0i-H9-0Df" firstAttribute="top" secondItem="wzs-aG-sHR" secondAttribute="top" id="sYv-A9-d6f"/>
+                            <constraint firstItem="PuR-Lx-LRa" firstAttribute="top" secondItem="wzs-aG-sHR" secondAttribute="top" id="xbm-8a-E4q"/>
                         </constraints>
                     </stackView>
                 </subviews>

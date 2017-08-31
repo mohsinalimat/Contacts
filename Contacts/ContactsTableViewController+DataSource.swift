@@ -41,11 +41,11 @@ extension ContactsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact's cell", for: indexPath) as! ContactTableViewCell
+        
         let contact = fetchedResultsController.object(at: indexPath)
-        let firstName = contact.value(forKey: "firstName") as! String
-        let lastName = contact.value(forKey: "lastName") as! String
-        let fullName = firstName + " " + lastName
-        cell.fullNameLabel.text = fullName
+        cell.configureUICell(contact: contact)
+        
+        
         return cell
     }
 }

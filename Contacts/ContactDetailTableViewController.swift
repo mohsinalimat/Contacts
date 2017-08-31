@@ -19,6 +19,7 @@ class ContactDetailTableViewController: UITableViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBAction func editContact(_ sender: Any) {
         let storyboard = UIStoryboard(name: "ContactForm", bundle: nil)
         let navigation = storyboard.instantiateInitialViewController() as! UINavigationController
@@ -62,6 +63,9 @@ class ContactDetailTableViewController: UITableViewController {
     }
     
     func configureUI() {
+        
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
+        
         if let navigationController = self.navigationController {
             configureNavigationControllerUI(navigationController)
         }
@@ -72,6 +76,10 @@ class ContactDetailTableViewController: UITableViewController {
             emailLabel.text = email
         } else {
             emailLabel.text = "Edit to modify email address"
+        }
+        
+        if let image = contact.profilePictureImage {
+            profilePictureImageView.image = UIImage(data: image as Data)
         }
         
         if let phoneNumber = contact.phoneNumber {

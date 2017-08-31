@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Contact)
 public class Contact: NSManagedObject {
@@ -48,6 +49,12 @@ public class Contact: NSManagedObject {
                 self.email = email
             } else {
                 self.email = nil
+            }
+            
+            if let profilePictureImageData = dictionary["profile_pic_image"] as? NSData {
+                self.profilePictureImage = profilePictureImageData
+            } else {
+                self.profilePictureImage = nil
             }
             
             if let favorite = dictionary["favorite"] as? Bool {

@@ -74,7 +74,7 @@ class ContactFormTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let contact = contact {
-            configureTextFields(with: contact)
+            configureUI(with: contact)
         } else {
             deleteCell.isHidden = true
         }
@@ -92,7 +92,11 @@ class ContactFormTableViewController: UITableViewController {
     }
     
     // MARK: Functions
-    func configureTextFields(with contact: Contact) {
+    func configureUI(with contact: Contact) {
+        if let image = contact.profilePictureImage {
+            profilePictureImageView.image = UIImage(data: image as Data)
+        }
+        
         if let firstName = contact.firstName {
             firstNameTextField.text = firstName
         }
@@ -129,6 +133,12 @@ class ContactFormTableViewController: UITableViewController {
             dictionary["email"] = email
         }
         
+        if let image = profilePictureImageView.image, image != #imageLiteral(resourceName: "user") {
+            if let imageData = UIImagePNGRepresentation(image) as NSData? {
+                dictionary["profile_pic_image"] = imageData
+            }
+        }
+        
         if let contact = contact {
             if contact.createdAt == nil {
                 dictionary["created_at"] = Date().formatToString()
@@ -153,6 +163,16 @@ class ContactFormTableViewController: UITableViewController {
         
         if let lastName = lastNameTextField.text {
             contact.lastName = lastName
+        }
+        
+        
+        if let image = profilePictureImageView.image, image != #imageLiteral(resourceName: "user") {
+            let imageData = UIImagePNGRepresentation(image)! as NSData
+            if let contactImageData = contact.profilePictureImage {
+                if imageData != contactImageData {
+                    contact.profilePictureImage = imageData
+                }
+            }
         }
         
         if let phoneNumber = mobileTextField.text {

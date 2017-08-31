@@ -74,19 +74,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Aw0-JB-Ul5">
-                                    <rect key="frame" x="32" y="27" width="311" height="202.5"/>
+                                    <rect key="frame" x="32" y="23" width="311" height="210.5"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tEI-p9-abd">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="160.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tEI-p9-abd">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="168.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="V8R-SS-EUf">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="V8R-SS-EUf">
                                                     <rect key="frame" x="92" y="0.0" width="127" height="127"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="V8R-SS-EUf" secondAttribute="height" multiplier="1:1" id="8I4-PJ-EvQ"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYd-39-6DL">
-                                                    <rect key="frame" x="0.0" y="127" width="311" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="135" width="311" height="33.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" red="0.99608826640000003" green="0.99606680869999997" blue="0.9960711002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -100,7 +100,7 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hdn-F8-Gh2">
-                                            <rect key="frame" x="0.0" y="172.5" width="311" height="30"/>
+                                            <rect key="frame" x="0.0" y="180.5" width="311" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CF-dS-Edc">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="30"/>
@@ -228,6 +228,7 @@
                         <outlet property="emailLabel" destination="gPE-CK-TcD" id="X6B-kM-nqC"/>
                         <outlet property="fullNameLabel" destination="sYd-39-6DL" id="lwi-DH-IEw"/>
                         <outlet property="phoneNumberLabel" destination="MTw-SV-XOz" id="S4A-oc-pZ4"/>
+                        <outlet property="profilePictureImageView" destination="V8R-SS-EUf" id="XGn-1S-MCU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfx-JL-cR0" userLabel="First Responder" sceneMemberID="firstResponder"/>

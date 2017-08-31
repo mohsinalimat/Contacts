@@ -16,6 +16,17 @@ class ContactTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profilePictureImageView.layer.cornerRadius = 19
+    }
+    
+    func configureUICell(contact: Contact) {
+        if let image = contact.profilePictureImage {
+            profilePictureImageView.image = UIImage(data: image as Data)
+        }
+        let firstName = contact.firstName ?? ""
+        let lastName = contact.lastName ?? ""
+        let fullName = firstName + " " + lastName
+        fullNameLabel.text = fullName
         // Initialization code
     }
 
