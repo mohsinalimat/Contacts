@@ -130,19 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
-				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
-				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
-				6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */,
-				6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */,
-				6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */,
-				6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */,
-				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
-				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
+				6EE97B091F580F43005A6924 /* View Controller */,
+				6EE97B081F580F33005A6924 /* Reusable View */,
+				6EE97B071F580F21005A6924 /* Helper Method */,
 				6E1126421F56B0130067E0D3 /* Model */,
 				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
-				6E02DD751F56636200C701D5 /* EditContact.storyboard */,
-				6E02DD351F556C8600C701D5 /* Main.storyboard */,
-				6E3489C81F578FF800757157 /* Contact.storyboard */,
 				6E02DD3D1F556C8600C701D5 /* LaunchScreen.storyboard */,
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
 				6E02DD401F556C8600C701D5 /* Info.plist */,
@@ -187,6 +179,70 @@
 				6E8DDA8A1F57EF0800E1E7EB /* Info.plist */,
 			);
 			path = ContactsTests;
+			sourceTree = "<group>";
+		};
+		6EE97B041F580ED7005A6924 /* ContactDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
+				6E3489C81F578FF800757157 /* Contact.storyboard */,
+			);
+			name = ContactDetailViewController;
+			sourceTree = "<group>";
+		};
+		6EE97B051F580EEC005A6924 /* ContactsTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
+				6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */,
+				6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */,
+			);
+			name = ContactsTableViewController;
+			sourceTree = "<group>";
+		};
+		6EE97B061F580F02005A6924 /* EditContactTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */,
+				6E02DD751F56636200C701D5 /* EditContact.storyboard */,
+			);
+			name = EditContactTableViewController;
+			sourceTree = "<group>";
+		};
+		6EE97B071F580F21005A6924 /* Helper Method */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
+			);
+			name = "Helper Method";
+			sourceTree = "<group>";
+		};
+		6EE97B081F580F33005A6924 /* Reusable View */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */,
+				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
+			);
+			name = "Reusable View";
+			sourceTree = "<group>";
+		};
+		6EE97B091F580F43005A6924 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EE97B0A1F580F62005A6924 /* MainViewController */,
+				6EE97B061F580F02005A6924 /* EditContactTableViewController */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		6EE97B0A1F580F62005A6924 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6E02DD351F556C8600C701D5 /* Main.storyboard */,
+				6EE97B041F580ED7005A6924 /* ContactDetailViewController */,
+				6EE97B051F580EEC005A6924 /* ContactsTableViewController */,
+			);
+			name = MainViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -616,6 +672,7 @@
 				6E8DDA8E1F57EF0800E1E7EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
