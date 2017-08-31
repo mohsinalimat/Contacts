@@ -49,7 +49,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="51.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -72,7 +72,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="51.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -95,7 +95,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="51.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -118,7 +118,7 @@
                                                     <rect key="frame" x="16" y="0.0" width="343" height="51.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -148,7 +148,7 @@
                                                         <color key="titleColor" red="0.83870935440000005" green="0.29540678860000003" blue="0.23926059899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="oVN-E8-BTI" kind="unwind" identifier="delete" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="vot-ti-8JT"/>
+                                                        <action selector="deleteContact:" destination="6HO-t9-ZPO" eventType="touchUpInside" id="9o4-i2-7Ds"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -171,12 +171,12 @@
                     <navigationItem key="navigationItem" id="yeO-l3-1G8">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="6vK-m9-xLa">
                             <connections>
-                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="cancel" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="q9g-xD-qpc"/>
+                                <action selector="cancelContact:" destination="6HO-t9-ZPO" id="NEy-c2-Iw5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="S2j-0x-fGO">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="S2j-0x-fGO">
                             <connections>
-                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="done" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="Dov-D2-XG0"/>
+                                <action selector="saveContact:" destination="6HO-t9-ZPO" id="dMu-g6-zEM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -187,6 +187,7 @@
                         <outlet property="firstNameTextField" destination="WTj-fd-NIZ" id="qrP-oX-VOl"/>
                         <outlet property="lastNameTextField" destination="OcQ-oT-5QT" id="JE2-ek-AoW"/>
                         <outlet property="mobileTextField" destination="G4C-Rz-jbj" id="RNc-k1-wcz"/>
+                        <segue destination="oVN-E8-BTI" kind="unwind" identifier="unwindToContactsTableViewController" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="Qcb-a1-18N"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANR-cU-Tsw" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -18,6 +18,48 @@ class ContactFormTableViewController: UITableViewController {
         return appDelegate.coreDataStack
     }()
     
+    @IBAction func cancelContact(_ sender: Any) {
+        unwindSegue()
+    }
+    
+    @IBAction func saveContact(_ sender: Any) {
+        
+        guard isValidChange() == true else {
+            let controller = UIAlertController(title: "Error", message: "Can't create a contact without a first name and last name", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Okay", style: .destructive, handler: nil)
+            controller.addAction(dismissAction)
+            present(controller, animated: true, completion: nil)
+            return
+        }
+        
+        if let contact = contact {
+            modifyContact(contact: contact)
+        } else {
+            let dictionary = getDictionary()
+            let _ = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
+        }
+        coreDataStack.saveContext()
+        unwindSegue()
+    }
+    
+    
+    @IBAction func deleteContact(_ sender: Any) {
+        guard let contact = contact else { return }
+        let controller = UIAlertController(title: "Are you sure to delete this contact?", message: nil, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { (action: UIAlertAction) in
+            self.coreDataStack.managedObjectContext.delete(contact)
+            self.unwindSegue()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        controller.addAction(deleteAction)
+        controller.addAction(cancelAction)
+        
+        present(controller, animated: true, completion: nil)
+        
+        
+    }
     
     // MARK: - TextField outlets
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -99,6 +141,7 @@ class ContactFormTableViewController: UITableViewController {
     }
     
     func modifyContact(contact: Contact) {
+        
         if let firstName = firstNameTextField.text {
             contact.firstName = firstName
         }
@@ -125,27 +168,17 @@ class ContactFormTableViewController: UITableViewController {
             let uuid = arc4random_uniform(9999999)
             contact.id = Int32(uuid)
         }
-
-
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "done" {
-            if let contact = contact {
-                modifyContact(contact: contact)
-            } else {
-                let dictionary = getDictionary()
-                let _ = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
-            }
-            coreDataStack.saveContext()
-        } else if segue.identifier == "delete" {
-            if let contact = contact {
-                coreDataStack.managedObjectContext.delete(contact)
-            }
-
+    func isValidChange() -> Bool {
+        guard firstNameTextField.text != "" && lastNameTextField.text != "" else {
+            return false
         }
+        return true
+    }
+    
+    func unwindSegue() {
+        self.performSegue(withIdentifier: "unwindToContactsTableViewController", sender: self)
     }
 
 }
