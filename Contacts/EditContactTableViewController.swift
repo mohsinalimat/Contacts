@@ -11,10 +11,12 @@ import CoreData
 
 class EditContactTableViewController: UITableViewController {
     
-    var contact: NSManagedObject? = nil
+    var contact: Contact? = nil
+    
+    var coreDataStack: CoreDataStack!
     
     // MARK: - TextField outlets
-
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
@@ -23,7 +25,11 @@ class EditContactTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.coreDataStack = appDelegate.coreDataStack
+        
         if let contact = contact {
+            print(contact)
             configureContactTextFields(with: contact)
         }
         
@@ -40,70 +46,108 @@ class EditContactTableViewController: UITableViewController {
     }
     
     // MARK: Functions
-    func configureContactTextFields(with contact: NSManagedObject) {
-        self.firstNameTextField.text = contact.value(forKey: "firstName") as? String
-        self.lastNameTextField.text = contact.value(forKey: "lastName") as? String
-        mobileTextField.text = contact.value(forKey: "phoneNumber") as? String
-        emailTextField.text = contact.value(forKey: "email") as? String
+    func configureContactTextFields(with contact: Contact) {
+        if let firstName = contact.firstName {
+            firstNameTextField.text = firstName
+        }
+        
+        if let lastName = contact.lastName {
+            lastNameTextField.text = lastName
+        }
+        
+        if let phoneNumber = contact.phoneNumber{
+            mobileTextField.text = phoneNumber
+        }
+        
+        if let email = contact.email{
+            emailTextField.text = email
+        }
     }
-
-    // MARK: - Table view data source
-
-
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func getDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        
+        if let firstName = firstNameTextField.text {
+            dictionary["first_name"] = firstName
+        }
+        
+        if let lastName = lastNameTextField.text {
+            dictionary["last_name"] = lastName
+        }
+        
+        if let phoneNumber = mobileTextField.text {
+            dictionary["phone_number"] = phoneNumber
+        }
+        
+        if let email = emailTextField.text {
+            dictionary["email"] = email
+        }
+        
+        if let contact = contact {
+            if contact.createdAt == nil {
+                dictionary["created_at"] = Date().formatToString()
+            } else {
+                dictionary["updated_at"] = Date().formatToString()
+            }
+            
+            if contact.id == 0 {
+                let uuid = UUID().uuidString
+                dictionary["id"] = uuid
+            }
+        }
+        
+        return dictionary
     }
-    */
+    
+    func modifyContact(contact: Contact) {
+        if let firstName = firstNameTextField.text {
+            contact.firstName = firstName
+        }
+        
+        if let lastName = lastNameTextField.text {
+            contact.lastName = lastName
+        }
+        
+        if let phoneNumber = mobileTextField.text {
+            contact.phoneNumber = phoneNumber
+        }
+        
+        if let email = emailTextField.text {
+            contact.email = email
+        }
+        
+        if contact.createdAt == nil {
+            contact.createdAt = Date() as NSDate
+        } else {
+            contact.updatedAt = Date() as NSDate
+        }
+        
+        if contact.id == 0 {
+            let uuid = arc4random_uniform(9999999)
+            contact.id = Int32(uuid)
+        }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "done's segue" {
+            if let contact = contact {
+                modifyContact(contact: contact)
+                print("a contact has been modified: \(contact)")
+            } else {
+                let dictionary = getDictionary()
+                let contact = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
+                print("Initialize a new contact: \(contact)")
+            }
+            coreDataStack.saveContext()
+        }
     }
-    */
 
+}
+
+extension EditContactTableViewController: UITextFieldDelegate {
+    
 }
