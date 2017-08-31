@@ -132,28 +132,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="" id="sDv-QL-F0t">
+                            <tableViewSection headerTitle="" id="975-28-JTW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="52" id="1zn-Cx-Vzw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="52" id="3ZI-hZ-fBt">
                                         <rect key="frame" x="0.0" y="500" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1zn-Cx-Vzw" id="tWE-VU-8If">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3ZI-hZ-fBt" id="b8g-90-b6W">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsw-uF-az7">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsK-7e-SoF">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <state key="normal" title="Delete">
                                                         <color key="titleColor" red="0.83870935440000005" green="0.29540678860000003" blue="0.23926059899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="oVN-E8-BTI" kind="unwind" identifier="delete" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="vot-ti-8JT"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zsw-uF-az7" firstAttribute="leading" secondItem="tWE-VU-8If" secondAttribute="leading" id="5wP-Ig-LgU"/>
-                                                <constraint firstItem="zsw-uF-az7" firstAttribute="top" secondItem="tWE-VU-8If" secondAttribute="top" id="aRG-5n-77B"/>
-                                                <constraint firstAttribute="bottom" secondItem="zsw-uF-az7" secondAttribute="bottom" id="fpL-o0-5BY"/>
-                                                <constraint firstAttribute="trailing" secondItem="zsw-uF-az7" secondAttribute="trailing" id="s63-O1-JQf"/>
+                                                <constraint firstAttribute="bottom" secondItem="EsK-7e-SoF" secondAttribute="bottom" id="Eho-Sz-Vx5"/>
+                                                <constraint firstItem="EsK-7e-SoF" firstAttribute="leading" secondItem="b8g-90-b6W" secondAttribute="leading" id="OiG-Ow-0Iw"/>
+                                                <constraint firstAttribute="trailing" secondItem="EsK-7e-SoF" secondAttribute="trailing" id="P5q-w9-Boa"/>
+                                                <constraint firstItem="EsK-7e-SoF" firstAttribute="top" secondItem="b8g-90-b6W" secondAttribute="top" id="QwG-di-YKR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -168,16 +171,17 @@
                     <navigationItem key="navigationItem" id="yeO-l3-1G8">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="6vK-m9-xLa">
                             <connections>
-                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="cancel's segue" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="q9g-xD-qpc"/>
+                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="cancel" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="q9g-xD-qpc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="S2j-0x-fGO">
                             <connections>
-                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="done's segue" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="Dov-D2-XG0"/>
+                                <segue destination="oVN-E8-BTI" kind="unwind" identifier="done" unwindAction="unwindToContactsTableViewControllerWithSegue:" id="Dov-D2-XG0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteCell" destination="3ZI-hZ-fBt" id="fyj-Sc-mo3"/>
                         <outlet property="doneBarButton" destination="S2j-0x-fGO" id="8NL-Ec-BjV"/>
                         <outlet property="emailTextField" destination="kwi-61-erU" id="6Fr-Hc-CNs"/>
                         <outlet property="firstNameTextField" destination="WTj-fd-NIZ" id="qrP-oX-VOl"/>
