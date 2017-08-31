@@ -15,42 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var coreDataStack = CoreDataStack(modelName: "Contacts")
-    
-    // MARK: Preload Data
-    
-    func preloadData() {
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
-        do {
-            let fetchResults = try coreDataStack.managedObjectContext.fetch(fetchRequest)
-            if fetchResults.count == 0 {
-                addSampleData()
-            }
-            
-        } catch let error as NSError {
-            fatalError("Error fetching data: \(error)")
-        }
-    }
-    
-    func addSampleData() {
-        
-        // Create notebooks
-        let putraDictionary = ["id": 123, "first_name": "Zulwiyoza", "last_name": "Putra"] as [String : Any]
-        let anindaDictionary = ["id": 212, "first_name": "Aninda", "last_name": "Rahmadianti"] as [String : Any]
-        let raraDictionary = ["id": 212, "first_name": "Aulia", "last_name": "Putri"] as [String : Any]
-        
-        let putra = Contact(dictionary: putraDictionary, context: coreDataStack.managedObjectContext)
-        let rara = Contact(dictionary: raraDictionary, context: coreDataStack.managedObjectContext)
-        let aninda = Contact(dictionary: anindaDictionary, context: coreDataStack.managedObjectContext)
-        
-        print(putra.firstName! + " " + aninda.firstName! + " " + rara.firstName!)
-        
-        coreDataStack.saveContext()
-        
-    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        preloadData()
         return true
     }
 
