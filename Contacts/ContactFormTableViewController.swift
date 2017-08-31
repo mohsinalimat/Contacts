@@ -18,17 +18,22 @@ class ContactFormTableViewController: UITableViewController {
         return appDelegate.coreDataStack
     }()
     
+    
     // MARK: - TextField outlets
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var deleteContactButton: UIButton!
+    @IBOutlet weak var deleteCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let contact = contact {
             configureTextFields(with: contact)
+        } else {
+            deleteCell.isHidden = true
         }
         
 
@@ -127,7 +132,7 @@ class ContactFormTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "done's segue" {
+        if segue.identifier == "done" {
             if let contact = contact {
                 modifyContact(contact: contact)
             } else {
@@ -135,6 +140,11 @@ class ContactFormTableViewController: UITableViewController {
                 let _ = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
             }
             coreDataStack.saveContext()
+        } else if segue.identifier == "delete" {
+            if let contact = contact {
+                coreDataStack.managedObjectContext.delete(contact)
+            }
+
         }
     }
 
