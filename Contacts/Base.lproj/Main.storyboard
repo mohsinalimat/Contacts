@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contact-->
+        <!--Contacts Table View Controller-->
         <scene sceneID="MPf-in-VkA">
             <objects>
                 <tableViewController id="vbF-mY-6Ya" customClass="ContactsTableViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,8 +32,16 @@
                             <outlet property="delegate" destination="vbF-mY-6Ya" id="pZQ-s4-4lg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contact" id="u73-ZI-cD3">
-                        <barButtonItem key="leftBarButtonItem" title="Groups" id="die-FD-DRq"/>
+                    <navigationItem key="navigationItem" id="u73-ZI-cD3">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="8FF-WB-GQY">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="Favorites"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ljg-3V-VBI">
                             <connections>
                                 <action selector="addContact:" destination="vbF-mY-6Ya" id="vLn-L5-v2K"/>
