@@ -2,7 +2,7 @@
 //  ContactsUITests.swift
 //  ContactsUITests
 //
-//  Created by Zulwiyoza Putra on 8/29/17.
+//  Created by Zulwiyoza Putra on 8/31/17.
 //  Copyright © 2017 Zulwiyoza Putra. All rights reserved.
 //
 
@@ -28,9 +28,22 @@ class ContactsUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCreateContact() {
+        XCUIApplication().navigationBars["Contacts.ContactsTableView"].buttons["Add"].tap()
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testViewContactDetail() {
+        
+        XCUIApplication().tables.staticTexts["Amanda  Puspa"].tap()
+        // Use recording to get started writing UI tests.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testEditContact() {
+        
     }
     
 }
