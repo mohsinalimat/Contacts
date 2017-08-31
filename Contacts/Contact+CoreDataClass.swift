@@ -69,12 +69,15 @@ public class Contact: NSManagedObject {
         }
     }
     
-    var initialCharacter: String? {
-        if let string = firstName?.uppercased() {
-            let initial = (string as NSString).substring(to: 1)
+    var initialCharacter: String {
+        if let firstName = firstName {
+            let initial = (firstName.uppercased() as NSString).substring(to: 1)
+            return initial
+        } else if let lastName = lastName {
+            let initial = (lastName.uppercased() as NSString).substring(to: 1)
             return initial
         } else {
-            return nil
+            return "#"
         }
     }
 }
