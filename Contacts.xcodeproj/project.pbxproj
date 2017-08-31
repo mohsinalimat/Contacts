@@ -30,6 +30,8 @@
 		6E8DDA7B1F57EEC500E1E7EB /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA7A1F57EEC500E1E7EB /* ContactsUITests.swift */; };
 		6E8DDA891F57EF0800E1E7EB /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */; };
 		6EB428461F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */; };
+		6EB4284A1F58C6DB005A1F44 /* Date+StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */; };
+		6EB4284C1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB4284B1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		6E8DDA8A1F57EF0800E1E7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactFormTableViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
+		6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatter.swift"; sourceTree = "<group>"; };
+		6EB4284B1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PhoneNumberFormatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
+				6EB4284B1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift */,
+				6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */,
 			);
 			name = HelperMethods;
 			sourceTree = "<group>";
@@ -385,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E02DD741F56592900C701D5 /* ContactFormTableViewController.swift in Sources */,
+				6EB4284C1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift in Sources */,
 				6E8DDA6C1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift in Sources */,
 				6E02DD781F5665EB00C701D5 /* ContactDetailTableViewController.swift in Sources */,
 				6E34892C1F5780CF00757157 /* Contacts.xcdatamodeld in Sources */,
@@ -398,6 +405,7 @@
 				6E02DD6C1F55818500C701D5 /* ContactTableViewCell.swift in Sources */,
 				6EB428461F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift in Sources */,
 				6E02DD321F556C8600C701D5 /* AppDelegate.swift in Sources */,
+				6EB4284A1F58C6DB005A1F44 /* Date+StringFormatter.swift in Sources */,
 				6E3489C61F578EB600757157 /* Contact+CoreDataClass.swift in Sources */,
 				6E02DD691F5580FD00C701D5 /* ContactsTableViewController.swift in Sources */,
 			);
