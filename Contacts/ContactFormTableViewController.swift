@@ -26,7 +26,15 @@ class ContactFormTableViewController: UITableViewController {
         
         guard isValidChange() == true else {
             let controller = UIAlertController(title: "Error", message: "Can't create a contact without a first name and last name", preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "Okay", style: .destructive, handler: nil)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+            controller.addAction(dismissAction)
+            present(controller, animated: true, completion: nil)
+            return
+        }
+        
+        guard emailTextField.text?.isValidEmail() == true else {
+            let controller = UIAlertController(title: "Error", message: "Email address is in a wrong format", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
             controller.addAction(dismissAction)
             present(controller, animated: true, completion: nil)
             return
