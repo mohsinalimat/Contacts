@@ -33,6 +33,7 @@
 		6EB4284A1F58C6DB005A1F44 /* Date+StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */; };
 		6EB4284C1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB4284B1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift */; };
 		6EB4284F1F58CB4A005A1F44 /* String+EmailFormatValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB4284E1F58CB4A005A1F44 /* String+EmailFormatValidation.swift */; };
+		6EB428511F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB428501F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +85,9 @@
 		6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactFormTableViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 		6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+StringFormatter.swift"; sourceTree = "<group>"; };
 		6EB4284B1F58C6F6005A1F44 /* String+PhoneNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PhoneNumberFormatter.swift"; sourceTree = "<group>"; };
-		6EB4284D1F58CA5B005A1F44 /* Contacts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Contacts.playground; path = Contacts/Contacts.playground; sourceTree = "<group>"; };
+		6EB4284D1F58CA5B005A1F44 /* Contacts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Contacts.playground; sourceTree = "<group>"; };
 		6EB4284E1F58CB4A005A1F44 /* String+EmailFormatValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailFormatValidation.swift"; sourceTree = "<group>"; };
+		6EB428501F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactFormTableViewController+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +118,6 @@
 		6E02DD251F556C8600C701D5 = {
 			isa = PBXGroup;
 			children = (
-				6EB4284D1F58CA5B005A1F44 /* Contacts.playground */,
 				6E02DD301F556C8600C701D5 /* Contacts */,
 				6E8DDA791F57EEC500E1E7EB /* ContactsUITests */,
 				6E8DDA871F57EF0800E1E7EB /* ContactsTests */,
@@ -137,6 +138,7 @@
 		6E02DD301F556C8600C701D5 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				6EB4284D1F58CA5B005A1F44 /* Contacts.playground */,
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
 				6E02DD3D1F556C8600C701D5 /* LaunchScreen.storyboard */,
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
@@ -212,6 +214,7 @@
 			children = (
 				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
 				6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */,
+				6EB428501F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift */,
 				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
 			);
 			name = "Contact Form";
@@ -414,6 +417,7 @@
 				6EB4284A1F58C6DB005A1F44 /* Date+StringFormatter.swift in Sources */,
 				6E3489C61F578EB600757157 /* Contact+CoreDataClass.swift in Sources */,
 				6E02DD691F5580FD00C701D5 /* ContactsTableViewController.swift in Sources */,
+				6EB428511F58D820005A1F44 /* ContactFormTableViewController+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
