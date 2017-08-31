@@ -16,3 +16,12 @@ extension String {
         return formatter.date(from: self)!
     }
 }
+
+extension Date {
+    func formatToString() -> String {
+        let formatter = DateFormatter()
+        // not sure the hour format is k or H
+        formatter.dateFormat = "y-M-dd'T'k:mm:ss.SSS'Z'"
+        return formatter.string(from: self)
+    }
+}
