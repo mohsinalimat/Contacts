@@ -38,6 +38,18 @@ public class Contact: NSManagedObject {
                 self.profilePictureURL = nil
             }
             
+            if let phoneNumber = dictionary["phone_number"] as? String {
+                self.phoneNumber = phoneNumber
+            } else {
+                self.phoneNumber = nil
+            }
+            
+            if let email = dictionary["email"] as? String {
+                self.email = email
+            } else {
+                self.email = nil
+            }
+            
             if let favorite = dictionary["favorite"] as? Bool {
                 self.favorite = favorite
             } else {

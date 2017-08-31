@@ -15,41 +15,31 @@ class ContactsTableViewController: UITableViewController {
         case all, favorites
     }
     
-    var coreDataStack: CoreDataStack!
+    lazy var coreDataStack: CoreDataStack = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.coreDataStack
+    }()
     
     var fetchedResultsController: NSFetchedResultsController<Contact>!
     
     @IBAction func addContact(_ sender: Any) {
         let storyboard = UIStoryboard(name: "EditContact", bundle: nil)
-        let addContactViewController = storyboard.instantiateInitialViewController()!
-        self.present(addContactViewController, animated: true, completion: nil)
+        if let controller = storyboard.instantiateInitialViewController() {
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            fatalError("No view controller in initial view")
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.coreDataStack = appDelegate.coreDataStack
-        
         fetchContacts()
         
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contact's cell")
         
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // Mark: - Cored data source
-    
-    
+    // Mark: - Core data source
     
     func fetchContacts(type: ContactsType = .all) {
         

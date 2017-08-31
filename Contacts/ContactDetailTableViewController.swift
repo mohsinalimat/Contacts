@@ -12,6 +12,9 @@ class ContactDetailTableViewController: UITableViewController {
 
     var contact: Contact!
     
+    var defaultBackgroundImage: UIImage? = nil
+    var defaultShadowImage: UIImage? = nil
+    
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -25,85 +28,63 @@ class ContactDetailTableViewController: UITableViewController {
             // If necessary do something
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deconfigureUI()
+    }
+    
+    func configureNavigationControllerUI(_ navigationController: UINavigationController) {
+        // Save images
+        defaultBackgroundImage = navigationController.navigationBar.backgroundImage(for: .default)
+        defaultShadowImage = navigationController.navigationBar.shadowImage
+        
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.view.backgroundColor = UIColor.clear
+    }
+    
+    func deconfigureNavigationControllerUI(_ navigationController: UINavigationController) {
+        if let image = defaultBackgroundImage {
+            navigationController.navigationBar.setBackgroundImage(image, for: .default)
+        }
+        if let image = defaultShadowImage {
+            navigationController.navigationBar.setBackgroundImage(image, for: .default)
+        }
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.view.backgroundColor = UIColor.clear
+    }
+    
+    func configureUI() {
+        if let navigationController = self.navigationController {
+            configureNavigationControllerUI(navigationController)
+        }
         
         fullNameLabel.text = "\(contact.firstName ?? "") \(contact.lastName ?? "")"
+        
         if let email = contact.email {
             emailLabel.text = email
+        } else {
+            emailLabel.text = "Edit to modify email address"
         }
         
         if let phoneNumber = contact.phoneNumber {
             phoneNumberLabel.text = phoneNumber
+        } else {
+            phoneNumberLabel.text = "Edit to modify phone number"
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func deconfigureUI() {
+        if let navigationController = self.navigationController {
+            deconfigureNavigationControllerUI(navigationController)
+        }
     }
-
-    // MARK: - Table view data source
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

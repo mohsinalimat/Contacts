@@ -13,7 +13,10 @@ class EditContactTableViewController: UITableViewController {
     
     var contact: Contact? = nil
     
-    var coreDataStack: CoreDataStack!
+    lazy var coreDataStack: CoreDataStack = {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.coreDataStack
+    }()
     
     // MARK: - TextField outlets
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
@@ -24,20 +27,11 @@ class EditContactTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.coreDataStack = appDelegate.coreDataStack
-        
         if let contact = contact {
-            print(contact)
-            configureContactTextFields(with: contact)
+            configureTextFields(with: contact)
         }
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +40,7 @@ class EditContactTableViewController: UITableViewController {
     }
     
     // MARK: Functions
-    func configureContactTextFields(with contact: Contact) {
+    func configureTextFields(with contact: Contact) {
         if let firstName = contact.firstName {
             firstNameTextField.text = firstName
         }
@@ -136,11 +130,9 @@ class EditContactTableViewController: UITableViewController {
         if segue.identifier == "done's segue" {
             if let contact = contact {
                 modifyContact(contact: contact)
-                print("a contact has been modified: \(contact)")
             } else {
                 let dictionary = getDictionary()
-                let contact = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
-                print("Initialize a new contact: \(contact)")
+                let _ = Contact(dictionary: dictionary, context: coreDataStack.managedObjectContext)
             }
             coreDataStack.saveContext()
         }
@@ -148,6 +140,3 @@ class EditContactTableViewController: UITableViewController {
 
 }
 
-extension EditContactTableViewController: UITextFieldDelegate {
-    
-}

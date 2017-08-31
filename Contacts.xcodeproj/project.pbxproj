@@ -25,7 +25,6 @@
 		6E34892C1F5780CF00757157 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E34892A1F5780CF00757157 /* Contacts.xcdatamodeld */; };
 		6E3489C61F578EB600757157 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3489C41F578EB600757157 /* Contact+CoreDataClass.swift */; };
 		6E3489C71F578EB600757157 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3489C51F578EB600757157 /* Contact+CoreDataProperties.swift */; };
-		6E3489CA1F578FF800757157 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3489C81F578FF800757157 /* Contact.storyboard */; };
 		6E8DDA6C1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */; };
 		6E8DDA6E1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */; };
 		6E8DDA7B1F57EEC500E1E7EB /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA7A1F57EEC500E1E7EB /* ContactsUITests.swift */; };
@@ -70,7 +69,6 @@
 		6E34892B1F5780CF00757157 /* Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts.xcdatamodel; sourceTree = "<group>"; };
 		6E3489C41F578EB600757157 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6E3489C51F578EB600757157 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6E3489C91F578FF800757157 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contact.storyboard; sourceTree = "<group>"; };
 		6E8DDA6B1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactsTableViewController+DataSource.swift"; sourceTree = "<group>"; };
 		6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactTableViewController+Delegate.swift"; sourceTree = "<group>"; };
 		6E8DDA781F57EEC500E1E7EB /* ContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,10 +128,10 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD311F556C8600C701D5 /* AppDelegate.swift */,
+				6E1126421F56B0130067E0D3 /* Model */,
 				6EE97B091F580F43005A6924 /* View Controller */,
 				6EE97B081F580F33005A6924 /* Reusable View */,
 				6EE97B071F580F21005A6924 /* Helper Method */,
-				6E1126421F56B0130067E0D3 /* Model */,
 				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
 				6E02DD3D1F556C8600C701D5 /* LaunchScreen.storyboard */,
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
-				6E3489C81F578FF800757157 /* Contact.storyboard */,
 			);
 			name = ContactDetailViewController;
 			sourceTree = "<group>";
@@ -356,7 +353,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E02DD6D1F55818500C701D5 /* ContactTableViewCell.xib in Resources */,
-				6E3489CA1F578FF800757157 /* Contact.storyboard in Resources */,
 				6E02DD3F1F556C8600C701D5 /* LaunchScreen.storyboard in Resources */,
 				6E02DD3C1F556C8600C701D5 /* Assets.xcassets in Resources */,
 				6E02DD761F56636200C701D5 /* EditContact.storyboard in Resources */,
@@ -449,14 +445,6 @@
 				6E02DD3E1F556C8600C701D5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		6E3489C81F578FF800757157 /* Contact.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E3489C91F578FF800757157 /* Base */,
-			);
-			name = Contact.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
