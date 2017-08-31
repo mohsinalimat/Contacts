@@ -29,6 +29,7 @@
 		6E8DDA6E1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA6D1F57AFCC00E1E7EB /* ContactTableViewController+Delegate.swift */; };
 		6E8DDA7B1F57EEC500E1E7EB /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA7A1F57EEC500E1E7EB /* ContactsUITests.swift */; };
 		6E8DDA891F57EF0800E1E7EB /* ContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */; };
+		6EB428461F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		6E8DDA861F57EF0800E1E7EB /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTests.swift; sourceTree = "<group>"; };
 		6E8DDA8A1F57EF0800E1E7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactFormTableViewController+ImagePickerController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
+				6EB428451F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift */,
 				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
 			);
 			name = "Contact Form";
@@ -393,6 +396,7 @@
 				6E3489C71F578EB600757157 /* Contact+CoreDataProperties.swift in Sources */,
 				6E02DD671F557BAF00C701D5 /* ContactsAPI+URLBuilder.swift in Sources */,
 				6E02DD6C1F55818500C701D5 /* ContactTableViewCell.swift in Sources */,
+				6EB428461F584F0B005A1F44 /* ContactFormTableViewController+ImagePickerController.swift in Sources */,
 				6E02DD321F556C8600C701D5 /* AppDelegate.swift in Sources */,
 				6E3489C61F578EB600757157 /* Contact+CoreDataClass.swift in Sources */,
 				6E02DD691F5580FD00C701D5 /* ContactsTableViewController.swift in Sources */,
