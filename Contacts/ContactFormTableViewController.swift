@@ -73,6 +73,8 @@ class ContactFormTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mobileTextField.addTarget(self, action: #selector(updatePhoneNumberFormattedTextField(sender:)), for: UIControlEvents.editingChanged)
+        
         if let contact = contact {
             configureUI(with: contact)
         } else {
@@ -89,6 +91,13 @@ class ContactFormTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updatePhoneNumberFormattedTextField(sender: Any) {
+        if let textField = sender as? UITextField, textField.text != nil {
+            let formattedPhoneNumber = textField.text!.formatPhoneNumber() ?? textField.text
+            textField.text = formattedPhoneNumber!
+        }
     }
     
     // MARK: Functions
