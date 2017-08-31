@@ -14,8 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    lazy var coreDataStack = CoreDataStack()
-    
+    var coreDataStack = CoreDataStack(modelName: "Contacts")
     
     // MARK: Preload Data
     
@@ -23,9 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
         do {
-            let fetchResults = try coreDataStack.manageObjectContext.execute(fetchRequest)
-            print(fetchResults)
-            addSampleData()
+            let fetchResults = try coreDataStack.managedObjectContext.fetch(fetchRequest)
+            if fetchResults.count == 0 {
+                addSampleData()
+            }
+            
         } catch let error as NSError {
             fatalError("Error fetching data: \(error)")
         }
@@ -38,13 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let anindaDictionary = ["id": 212, "first_name": "Aninda", "last_name": "Rahmadianti"] as [String : Any]
         let raraDictionary = ["id": 212, "first_name": "Aulia", "last_name": "Putri"] as [String : Any]
         
-        let putra = Contact(dictionary: putraDictionary, context: coreDataStack.manageObjectContext)
-        let rara = Contact(dictionary: raraDictionary, context: coreDataStack.manageObjectContext)
-        let aninda = Contact(dictionary: anindaDictionary, context: coreDataStack.manageObjectContext)
+        let putra = Contact(dictionary: putraDictionary, context: coreDataStack.managedObjectContext)
+        let rara = Contact(dictionary: raraDictionary, context: coreDataStack.managedObjectContext)
+        let aninda = Contact(dictionary: anindaDictionary, context: coreDataStack.managedObjectContext)
         
         print(putra.firstName! + " " + aninda.firstName! + " " + rara.firstName!)
         
-        coreDataStack.saveMainContext()
+        coreDataStack.saveContext()
         
     }
 
@@ -75,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         
-        coreDataStack.saveMainContext()
+        coreDataStack.saveContext()
     }
 
     

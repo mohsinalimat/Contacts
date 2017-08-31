@@ -10,10 +10,13 @@ import UIKit
 import CoreData
 
 class ContactsTableViewController: UITableViewController {
+    
+    var coreDataStack: CoreDataStack!
 
-    var contacts: [NSManagedObject] = [] {
+    var contacts: [Contact] = [] {
         didSet {
             print("contacts didset \(contacts)")
+            print(contacts)
             tableView.reloadData()
         }
     }
@@ -25,13 +28,14 @@ class ContactsTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        self.coreDataStack = appDelegate.coreDataStack
         
-        //
-        
-        fetchContacts { (objects: [NSManagedObject]?, error: NSError?) in
+        fetchContacts { (contacts: [Contact]?, error: NSError?) in
             guard error == nil else { return }
-            guard let escapedObjects = objects else { return }
-            self.contacts = escapedObjects
+            guard let escapedContacts = contacts else { return }
+            self.contacts = escapedContacts
         }
         
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contact's cell")
@@ -51,9 +55,17 @@ class ContactsTableViewController: UITableViewController {
     
     // Mark: - Cored data source
     
-    func fetchContacts(completion: (_ objects: [NSManagedObject]?,_ error: NSError?) -> Void) {
-        guard (UIApplication.shared.delegate as? AppDelegate) != nil else { return }
+    func fetchContacts(completion: @escaping (_ contacts: [Contact]?,_ error: NSError?) -> Void) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Contact")
+        let sortDescriptor = NSSortDescriptor(key: "firstName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
 
+        do {
+            let results = try coreDataStack.managedObjectContext.fetch(fetchRequest) as! [Contact]
+            completion(results, nil)
+        } catch let error as NSError {
+            completion(nil, error)
+        }
     }
     
     func saveContact(with dictionary: [String: Any], completion: (_ object: NSManagedObject?,_ error: NSError?) -> Void) {
@@ -70,8 +82,11 @@ class ContactsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+        if contacts.count != 0 {
+            return contacts.count
+        } else {
+            return 10
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
