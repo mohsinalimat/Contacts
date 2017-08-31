@@ -143,6 +143,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneBarButton" destination="S2j-0x-fGO" id="8NL-Ec-BjV"/>
                         <outlet property="emailTextField" destination="kwi-61-erU" id="6Fr-Hc-CNs"/>
                         <outlet property="firstNameTextField" destination="WTj-fd-NIZ" id="qrP-oX-VOl"/>
                         <outlet property="lastNameTextField" destination="OcQ-oT-5QT" id="JE2-ek-AoW"/>
