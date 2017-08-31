@@ -13,11 +13,13 @@ extension ContactsTableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchedResultsController.sections?.count ?? 0
+        guard let sections = fetchedResultsController.sections else { return 0}
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        guard let sections = fetchedResultsController.sections else { fatalError("Unexpected Section") }
+        return sections[section].numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -25,19 +27,16 @@ extension ContactsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(section)
+        guard let sections = fetchedResultsController.sections else { fatalError("Unexpected Section") }
+        return sections[section].name
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        var sections: [String] = []
-        for i in 0..<(fetchedResultsController.sections?.count ?? 0) {
-            sections.append(String(i))
-        }
-        return sections
+        return fetchedResultsController.sectionIndexTitles
     }
     
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        return index
+        return fetchedResultsController.section(forSectionIndexTitle: title, at: index)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

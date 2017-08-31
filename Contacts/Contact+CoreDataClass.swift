@@ -56,4 +56,13 @@ public class Contact: NSManagedObject {
             fatalError("Unable to find Entity name!")
         }
     }
+    
+    var initialCharacter: String? {
+        if let string = firstName?.uppercased() {
+            let initial = (string as NSString).substring(to: 1)
+            return initial
+        } else {
+            return nil
+        }
+    }
 }

@@ -31,6 +31,7 @@ class ContactsTableViewController: UITableViewController {
         self.coreDataStack = appDelegate.coreDataStack
         
         fetchContacts()
+        
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "contact's cell")
         
         
@@ -60,7 +61,7 @@ class ContactsTableViewController: UITableViewController {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(Contact.firstName), ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.managedObjectContext, sectionNameKeyPath: #keyPath(Contact.initialCharacter), cacheName: nil)
 
         do {
             try fetchedResultsController.performFetch()
