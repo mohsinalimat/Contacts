@@ -62,6 +62,7 @@ class ContactFormTableViewController: UITableViewController {
     }
     
     // MARK: - TextField outlets
+    @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -78,7 +79,11 @@ class ContactFormTableViewController: UITableViewController {
             deleteCell.isHidden = true
         }
         
-
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(presentSourceOptionAlertController))
+        profilePictureImageView.addGestureRecognizer(gesture)
+        profilePictureImageView.isUserInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -181,5 +186,50 @@ class ContactFormTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "unwindToContactsTableViewController", sender: self)
     }
 
+}
+
+extension ContactFormTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func setupImagePickerController(sourceType: UIImagePickerControllerSourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func presentSourceOptionAlertController() {
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action: UIAlertAction) in
+            self.setupImagePickerController(sourceType: .photoLibrary)
+        }
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action: UIAlertAction) in
+            self.setupImagePickerController(sourceType: .camera)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        controller.addAction(photoLibraryAction)
+        controller.addAction(cameraAction)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    //Tells the delegate that the user picked a still image or movie.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.profilePictureImageView.image = image
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //Tells the delegate that the user cancelled the pick operation.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        
+    }
 }
 
