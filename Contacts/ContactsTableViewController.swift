@@ -23,7 +23,7 @@ class ContactsTableViewController: UITableViewController {
     var fetchedResultsController: NSFetchedResultsController<Contact>!
     
     @IBAction func addContact(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "EditContact", bundle: nil)
+        let storyboard = UIStoryboard(name: "ContactForm", bundle: nil)
         if let controller = storyboard.instantiateInitialViewController() {
             self.present(controller, animated: true, completion: nil)
         } else {

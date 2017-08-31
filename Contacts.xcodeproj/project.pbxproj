@@ -18,8 +18,8 @@
 		6E02DD6C1F55818500C701D5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */; };
 		6E02DD6D1F55818500C701D5 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */; };
 		6E02DD721F5644F700C701D5 /* String+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */; };
-		6E02DD741F56592900C701D5 /* EditContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */; };
-		6E02DD761F56636200C701D5 /* EditContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E02DD751F56636200C701D5 /* EditContact.storyboard */; };
+		6E02DD741F56592900C701D5 /* ContactFormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */; };
+		6E02DD761F56636200C701D5 /* ContactForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E02DD751F56636200C701D5 /* ContactForm.storyboard */; };
 		6E02DD781F5665EB00C701D5 /* ContactDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */; };
 		6E11263D1F56A1350067E0D3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */; };
 		6E34892C1F5780CF00757157 /* Contacts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E34892A1F5780CF00757157 /* Contacts.xcdatamodeld */; };
@@ -62,8 +62,8 @@
 		6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
-		6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactTableViewController.swift; sourceTree = "<group>"; };
-		6E02DD751F56636200C701D5 /* EditContact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditContact.storyboard; sourceTree = "<group>"; };
+		6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactFormTableViewController.swift; sourceTree = "<group>"; };
+		6E02DD751F56636200C701D5 /* ContactForm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactForm.storyboard; sourceTree = "<group>"; };
 		6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailTableViewController.swift; sourceTree = "<group>"; };
 		6E11263C1F56A1350067E0D3 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6E34892B1F5780CF00757157 /* Contacts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts.xcdatamodel; sourceTree = "<group>"; };
@@ -197,13 +197,13 @@
 			name = ContactsTableViewController;
 			sourceTree = "<group>";
 		};
-		6EE97B061F580F02005A6924 /* EditContactTableViewController */ = {
+		6EE97B061F580F02005A6924 /* ContactFormTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6E02DD731F56592900C701D5 /* EditContactTableViewController.swift */,
-				6E02DD751F56636200C701D5 /* EditContact.storyboard */,
+				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
+				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
 			);
-			name = EditContactTableViewController;
+			name = ContactFormTableViewController;
 			sourceTree = "<group>";
 		};
 		6EE97B071F580F21005A6924 /* Helper Method */ = {
@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				6EE97B0A1F580F62005A6924 /* MainViewController */,
-				6EE97B061F580F02005A6924 /* EditContactTableViewController */,
+				6EE97B061F580F02005A6924 /* ContactFormTableViewController */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -355,7 +355,7 @@
 				6E02DD6D1F55818500C701D5 /* ContactTableViewCell.xib in Resources */,
 				6E02DD3F1F556C8600C701D5 /* LaunchScreen.storyboard in Resources */,
 				6E02DD3C1F556C8600C701D5 /* Assets.xcassets in Resources */,
-				6E02DD761F56636200C701D5 /* EditContact.storyboard in Resources */,
+				6E02DD761F56636200C701D5 /* ContactForm.storyboard in Resources */,
 				6E02DD371F556C8600C701D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E02DD741F56592900C701D5 /* EditContactTableViewController.swift in Sources */,
+				6E02DD741F56592900C701D5 /* ContactFormTableViewController.swift in Sources */,
 				6E8DDA6C1F57AF9B00E1E7EB /* ContactsTableViewController+DataSource.swift in Sources */,
 				6E02DD781F5665EB00C701D5 /* ContactDetailTableViewController.swift in Sources */,
 				6E34892C1F5780CF00757157 /* Contacts.xcdatamodeld in Sources */,

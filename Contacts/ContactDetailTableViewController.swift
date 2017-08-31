@@ -20,9 +20,9 @@ class ContactDetailTableViewController: UITableViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     @IBAction func editContact(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "EditContact", bundle: nil)
+        let storyboard = UIStoryboard(name: "ContactForm", bundle: nil)
         let navigation = storyboard.instantiateInitialViewController() as! UINavigationController
-        let controller = navigation.topViewController as! EditContactTableViewController
+        let controller = navigation.topViewController as! ContactFormTableViewController
         controller.contact = contact
         self.present(navigation, animated: true) {
             // If necessary do something

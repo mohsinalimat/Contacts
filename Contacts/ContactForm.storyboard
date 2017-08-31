@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Edit Contact Table View Controller-->
+        <!--Contact Form Table View Controller-->
         <scene sceneID="ESY-hG-a3G">
             <objects>
-                <tableViewController id="6HO-t9-ZPO" customClass="EditContactTableViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6HO-t9-ZPO" customClass="ContactFormTableViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ogW-LI-CPC">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

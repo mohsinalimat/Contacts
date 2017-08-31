@@ -1,5 +1,5 @@
 //
-//  EditContactTableViewController.swift
+//  ContactFormTableViewController.swift
 //  Contacts
 //
 //  Created by Zulwiyoza Putra on 8/29/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditContactTableViewController: UITableViewController {
+class ContactFormTableViewController: UITableViewController {
     
     var contact: Contact? = nil
     
