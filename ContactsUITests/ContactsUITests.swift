@@ -28,11 +28,51 @@ class ContactsUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testCreateContact() {
-        XCUIApplication().navigationBars["Contacts.ContactsTableView"].buttons["Add"].tap()
+    func testCreateContactWithoutImage() {
+        
+        
+        let app = XCUIApplication()
+        app.navigationBars["Contacts.ContactsTableView"].buttons["Add"].tap()
+        
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        tablesQuery.textFields["First Name"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element.typeText("John")
+        tablesQuery.textFields["Last Name"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 1).children(matching: .textField).element.typeText("Appleseed")
+        app.tables.containing(.image, identifier:"user").element.swipeUp()
+        tablesQuery.textFields["Mobile"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 2).children(matching: .textField).element.typeText("62882379160")
+        tablesQuery.textFields["Email"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 3).children(matching: .textField).element.typeText("john@gmail.com")
+        app.navigationBars["Contacts.ContactFormTableView"].buttons["Save"].tap()
+        
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testCreateContactWithImage() {
+        
+        let app = XCUIApplication()
+        app.navigationBars["Contacts.ContactsTableView"].buttons["Add"].tap()
+        
+        // TODO: - Add image here on imageView
+        
+        let tablesQuery2 = app.tables
+        let tablesQuery = tablesQuery2
+        tablesQuery.textFields["First Name"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element.typeText("John")
+        tablesQuery.textFields["Last Name"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 1).children(matching: .textField).element.typeText("Appleseed")
+        tablesQuery.textFields["Mobile"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 2).children(matching: .textField).element.typeText("6282379160")
+        tablesQuery.textFields["Email"].tap()
+        tablesQuery2.children(matching: .cell).element(boundBy: 3).children(matching: .textField).element.typeText("john@apple.com")
+        app.navigationBars["Contacts.ContactFormTableView"].buttons["Save"].tap()
+        
+        
+        
     }
     
     func testViewContactDetail() {
