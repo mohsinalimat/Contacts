@@ -144,9 +144,9 @@
 				6E02DD3B1F556C8600C701D5 /* Assets.xcassets */,
 				6E02DD401F556C8600C701D5 /* Info.plist */,
 				6E1126421F56B0130067E0D3 /* Models */,
-				6EE97B091F580F43005A6924 /* ViewControllers */,
-				6EE97B081F580F33005A6924 /* ReusableViews */,
-				6EE97B071F580F21005A6924 /* HelperMethods */,
+				6EE97B091F580F43005A6924 /* View Controllers */,
+				6EE97B081F580F33005A6924 /* Reusable Views */,
+				6EE97B071F580F21005A6924 /* Helper Methods */,
 				6E02DD6E1F558BDE00C701D5 /* ContactsAPI */,
 			);
 			path = Contacts;
@@ -174,8 +174,8 @@
 		6E8DDA791F57EEC500E1E7EB /* ContactsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6E8DDA7A1F57EEC500E1E7EB /* ContactsUITests.swift */,
-				6E8DDA7C1F57EEC500E1E7EB /* Info.plist */,
+				6EB428551F58E08B005A1F44 /* Cases */,
+				6EB428581F58E0D5005A1F44 /* Supporting Files */,
 			);
 			path = ContactsUITests;
 			sourceTree = "<group>";
@@ -183,8 +183,8 @@
 		6E8DDA871F57EF0800E1E7EB /* ContactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */,
-				6E8DDA8A1F57EF0800E1E7EB /* Info.plist */,
+				6EB428561F58E097005A1F44 /* Cases */,
+				6EB428571F58E09C005A1F44 /* Supporting Files */,
 			);
 			path = ContactsTests;
 			sourceTree = "<group>";
@@ -217,34 +217,66 @@
 			name = Contact;
 			sourceTree = "<group>";
 		};
-		6EE97B041F580ED7005A6924 /* ContactDetail */ = {
+		6EB428551F58E08B005A1F44 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDA7A1F57EEC500E1E7EB /* ContactsUITests.swift */,
+			);
+			name = Cases;
+			sourceTree = "<group>";
+		};
+		6EB428561F58E097005A1F44 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDA881F57EF0800E1E7EB /* ContactsTests.swift */,
+			);
+			name = Cases;
+			sourceTree = "<group>";
+		};
+		6EB428571F58E09C005A1F44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDA8A1F57EF0800E1E7EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EB428581F58E0D5005A1F44 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E8DDA7C1F57EEC500E1E7EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EE97B041F580ED7005A6924 /* Contact Detail */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD771F5665EB00C701D5 /* ContactDetailTableViewController.swift */,
 			);
-			name = ContactDetail;
+			name = "Contact Detail";
 			sourceTree = "<group>";
 		};
-		6EE97B051F580EEC005A6924 /* ContactsList */ = {
+		6EE97B051F580EEC005A6924 /* Contacts List */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD681F5580FD00C701D5 /* ContactsTableViewController.swift */,
 				6EB428531F58D9CE005A1F44 /* ContactLitsExtensions */,
 			);
-			name = ContactsList;
+			name = "Contacts List";
 			sourceTree = "<group>";
 		};
-		6EE97B061F580F02005A6924 /* ContactForm */ = {
+		6EE97B061F580F02005A6924 /* Contact Form */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD731F56592900C701D5 /* ContactFormTableViewController.swift */,
 				6E02DD751F56636200C701D5 /* ContactForm.storyboard */,
 				6EB428521F58D9B0005A1F44 /* ContactFormExtensions */,
 			);
-			name = ContactForm;
+			name = "Contact Form";
 			sourceTree = "<group>";
 		};
-		6EE97B071F580F21005A6924 /* HelperMethods */ = {
+		6EE97B071F580F21005A6924 /* Helper Methods */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD711F5644F700C701D5 /* String+DateFormatter.swift */,
@@ -252,33 +284,33 @@
 				6EB428491F58C6DB005A1F44 /* Date+StringFormatter.swift */,
 				6EB4284E1F58CB4A005A1F44 /* String+EmailFormatValidation.swift */,
 			);
-			name = HelperMethods;
+			name = "Helper Methods";
 			sourceTree = "<group>";
 		};
-		6EE97B081F580F33005A6924 /* ReusableViews */ = {
+		6EE97B081F580F33005A6924 /* Reusable Views */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD6A1F55818500C701D5 /* ContactTableViewCell.swift */,
 				6E02DD6B1F55818500C701D5 /* ContactTableViewCell.xib */,
 			);
-			name = ReusableViews;
+			name = "Reusable Views";
 			sourceTree = "<group>";
 		};
-		6EE97B091F580F43005A6924 /* ViewControllers */ = {
+		6EE97B091F580F43005A6924 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				6EE97B0A1F580F62005A6924 /* Main */,
-				6EE97B061F580F02005A6924 /* ContactForm */,
+				6EE97B061F580F02005A6924 /* Contact Form */,
 			);
-			name = ViewControllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		6EE97B0A1F580F62005A6924 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6E02DD351F556C8600C701D5 /* Main.storyboard */,
-				6EE97B041F580ED7005A6924 /* ContactDetail */,
-				6EE97B051F580EEC005A6924 /* ContactsList */,
+				6EE97B041F580ED7005A6924 /* Contact Detail */,
+				6EE97B051F580EEC005A6924 /* Contacts List */,
 			);
 			name = Main;
 			sourceTree = "<group>";
