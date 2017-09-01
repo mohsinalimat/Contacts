@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import Contacts
 
 class ContactsTests: XCTestCase {
     
@@ -21,6 +22,7 @@ class ContactsTests: XCTestCase {
     }
     
     func testExample() {
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
